@@ -1,0 +1,304 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+\usepackage{indentfirst}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage{makecell}
+
+\begin{document}
+
+    \begin{titlepage}
+        \begin{center}
+            \textsc{\large Exercise solutions for\\
+            Intermediate Logic\\
+            by David Bostock}\\[1.5cm]
+            \textsc{D. G. O.}
+        \end{center}
+    \end{titlepage}
+
+    \newpage
+
+    \setcounter{section}{1}
+
+    \section{Truth-Functors}
+
+    \subsection{Truth-Functors}
+
+    \begin{enumerate}[label=\thesubsection.\arabic*.]
+        \item The truth-tables are the followings.
+            \begin{enumerate}[label=(\textit{\alph*})]
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        \makecell{Third \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T & F \\
+                        T & T & F & F \\
+                        T & F & T & F \\
+                        T & F & F & T \\
+                        F & T & T & F \\
+                        F & T & F & T \\
+                        F & F & T & T \\
+                        F & F & F & F \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        \makecell{Third \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T & T \\
+                        T & T & F & T \\
+                        T & F & T & T \\
+                        T & F & F & F \\
+                        F & T & T & T \\
+                        F & T & F & F \\
+                        F & F & T & F \\
+                        F & F & F & F \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        \makecell{Third \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T & F \\
+                        T & T & F & F \\
+                        T & F & T & F \\
+                        T & F & F & F \\
+                        F & T & T & T \\
+                        F & T & F & T \\
+                        F & F & T & T \\
+                        F & F & F & T \\
+                    \end{tabular}
+                \end{minipage}
+            \end{enumerate}
+
+        \item The three-place function has the same value as the two-place function if the value of the first arguments are the same. Whether a two-place function can be the \textit{same} as a three-place function depends on the definition of \textit{same}, but with regards to the strictest definition, no, because a three-place function needs 3 arguments always.
+
+        \item The truth-tables for all two-place functions are below. An n-place function has $2^n$ lines, and there are $2^{2^n}$ n-place functions, so all in all $2^n \cdot 2^{2^n} = 2^{n + 2^n}$ lines. Assuming the time it takes for me to write down each function is proportial to the number of lines, it would take $2^{3 + 2^3} / 2^{2 + 2^2} = 32$ times as much long.
+            \begin{enumerate}[label=(\arabic*)]
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T \\
+                        T & F & T \\
+                        F & T & T \\
+                        F & F & T \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T \\
+                        T & F & T \\
+                        F & T & T \\
+                        F & F & F \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T \\
+                        T & F & T \\
+                        F & T & F \\
+                        F & F & T \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T \\
+                        T & F & T \\
+                        F & T & F \\
+                        F & F & F \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T \\
+                        T & F & F \\
+                        F & T & T \\
+                        F & F & T \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T \\
+                        T & F & F \\
+                        F & T & T \\
+                        F & F & F \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T \\
+                        T & F & F \\
+                        F & T & F \\
+                        F & F & T \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & T \\
+                        T & F & F \\
+                        F & T & F \\
+                        F & F & F \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & F \\
+                        T & F & T \\
+                        F & T & T \\
+                        F & F & T \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & F \\
+                        T & F & T \\
+                        F & T & T \\
+                        F & F & F \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & F \\
+                        T & F & T \\
+                        F & T & F \\
+                        F & F & T \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & F \\
+                        T & F & T \\
+                        F & T & F \\
+                        F & F & F \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & F \\
+                        T & F & F \\
+                        F & T & T \\
+                        F & F & T \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & F \\
+                        T & F & F \\
+                        F & T & T \\
+                        F & F & F \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & F \\
+                        T & F & F \\
+                        F & T & F \\
+                        F & F & T \\
+                    \end{tabular}
+                \end{minipage}
+                \begin{minipage}{\textwidth}
+                \item \ \\
+                    \begin{tabular}{c c | c}
+                        \makecell{First \\ argument} &
+                        \makecell{Second \\ argument} &
+                        Value \\
+                        \hline
+                        T & T & F \\
+                        T & F & F \\
+                        F & T & F \\
+                        F & F & F \\
+                    \end{tabular}
+                \end{minipage}
+            \end{enumerate}
+
+    \end{enumerate}
+
+\end{document}
